@@ -1,1 +1,15 @@
-<p>menu works!</p>
+<div class="container">
+  <div class="menu">
+    <h1>Menu</h1>
+    <ul class="nav">
+      <li><a routerLink="/home"><mat-icon class="icon-black">home</mat-icon> Home</a></li>
+      <li><a routerLink="/account"><mat-icon class="icon-black">account_circle</mat-icon> Account</a></li>
+      <li><a routerLink="/credit"><mat-icon class="icon-black">check</mat-icon> Vehicle Credit</a></li>
+      <li><a routerLink="/plans"><mat-icon class="icon-black">event_note</mat-icon> Plans</a></li>
+      <li><a href=""><mat-icon class="icon-black">exit_to_app</mat-icon> Log Out</a></li>
+    </ul>
+  </div>
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

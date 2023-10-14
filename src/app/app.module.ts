@@ -12,6 +12,9 @@ import { HeaderComponent } from './shared/components/header/header.component';
 import { MenuComponent } from './shared/components/menu/menu.component';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { AccountComponent } from './profile/pages/account/account.component';
+import { PageNotFoundComponent } from './public/pages/page-not-found/page-not-found.component';
+import {MatIconModule} from "@angular/material/icon";
 
 @NgModule({
   declarations: [
@@ -22,12 +25,15 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     CreditVehicleComponent,
     ScheduleComponent,
     HeaderComponent,
-    MenuComponent
+    MenuComponent,
+    AccountComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatToolbarModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
