@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { HomepageComponent } from './public/pages/homepage/homepage.component'
 
 @Component({
   selector: 'app-root',
