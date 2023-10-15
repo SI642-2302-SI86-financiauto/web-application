@@ -16,6 +16,8 @@ import { AccountComponent } from './profile/pages/account/account.component';
 import { PageNotFoundComponent } from './public/pages/page-not-found/page-not-found.component';
 import {MatIconModule} from "@angular/material/icon";
 import { FormsModule } from '@angular/forms';
+import {MatTableModule} from "@angular/material/table";
+import { TableScheduleComponent } from './plans/components/table-schedule/table-schedule.component';
 
 @NgModule({
   declarations: [
@@ -28,14 +30,16 @@ import { FormsModule } from '@angular/forms';
     HeaderComponent,
     MenuComponent,
     AccountComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    TableScheduleComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatToolbarModule,
     MatIconModule,
-    FormsModule
+    FormsModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
