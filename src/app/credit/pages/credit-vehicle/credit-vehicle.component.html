@@ -1,1 +1,94 @@
-<p>credit-vehicle works!</p>
+<div class="schedule__container">
+  <h1 class="text">Calculo de crédito vehícular</h1>
+
+  <div class="moneda">
+    <div class="tipo">
+      <h3>Tipo de moneda</h3>
+      <div class="options">
+        <mat-radio-group >
+          <mat-radio-button value="after">Soles</mat-radio-button>
+          <mat-radio-button class="example-margin" value="before">Dolares</mat-radio-button>
+        </mat-radio-group>
+      </div>
+
+    </div>
+    <div class="costo__vehiculo">
+      <h3>Costo del vehículo</h3>
+      <mat-form-field  appearance="outline" style="width: 500px" >
+        <input matInput placeholder="Ej: 10,000">
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="cuotas">
+    <div class="costo__vehiculo">
+      <h3>Cuota inicial a pagar (%)*</h3>
+      <mat-form-field  appearance="outline" style="width: 400px" >
+        <input matInput placeholder="Ej: 20,000">
+      </mat-form-field>
+    </div>
+    <div class="costo__vehiculo2">
+      <h3>Cuota final a pagar (%)*</h3>
+      <mat-form-field  appearance="outline" style="width: 500px" >
+        <input matInput placeholder="Ej: 40,000">
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="tasa">
+    <div class="tipo">
+      <h3>Tipo de tasa</h3>
+      <div class="options">
+        <mat-radio-group >
+          <mat-radio-button value="after">Tasa Nominal</mat-radio-button>
+          <mat-radio-button class="example-margin" value="before">Tasa Efectiva</mat-radio-button>
+        </mat-radio-group>
+      </div>
+
+    </div>
+    <div class="costo__vehiculo">
+      <h3>Valor de la tasa (%)*</h3>
+      <mat-form-field  appearance="outline" style="width: 500px" >
+        <input matInput placeholder="Ej: 20">
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="frecuencia__pago">
+    <div class="frecuencia">
+    <h4>Frecuencia de pago</h4>
+    <mat-form-field appearance="outline">
+      <mat-select  name="food">
+        <mat-option *ngFor="let food of foods" [value]="food.value">
+          {{food.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    </div>
+    <div class="slider">
+      <div class="title">
+        <h3  class="example-name-label2">Tiempo a pagar</h3>
+        <h3 class="example-value-label2">{{slider.value}}</h3>
+      </div>
+      <mat-slider
+        class="example-margin"
+        [disabled]="disabled"
+        [max]="max"
+        [min]="min"
+        [step]="step"
+        [discrete]="thumbLabel"
+        [showTickMarks]="showTicks">
+        <input matSliderThumb [(ngModel)]="value" #slider>
+      </mat-slider>
+    </div>
+  </div>
+
+  <div class="button-custom">
+    <button class="button" mat-flat-button style="background-color: #151D3A !important; color: white;">CALCULAR</button>
+  </div>
+
+
+
+
+
+</div>

@@ -1,0 +1,87 @@
+.schedule__container {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  min-height: 100%;
+  background-color: white;
+  margin: 20px;
+  border-radius: 10px;
+  padding: 50px;
+  row-gap: 20px;
+
+}
+
+.text {
+  display: flex;
+  justify-content: center;
+}
+
+.moneda {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.options {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.example-margin {
+  margin-right: 10px;
+}
+
+.tasa {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.cuotas {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.frecuencia__pago {
+  display: flex;
+  flex-flow: row wrap;
+
+  gap: 61px;
+
+}
+
+.frecuencia {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.example-label-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 10px 0;
+  max-width: 284px;
+}
+
+.slider {
+
+  width: 70%;
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.title {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+
+}
+
+mat-slider {
+
+}
+
+.button-custom {
+  display: flex;
+  justify-content: center;
+}
