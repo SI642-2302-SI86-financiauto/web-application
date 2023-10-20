@@ -18,6 +18,13 @@ import {MatIconModule} from "@angular/material/icon";
 import { FormsModule } from '@angular/forms';
 import {MatTableModule} from "@angular/material/table";
 import { TableScheduleComponent } from './plans/components/table-schedule/table-schedule.component';
+import {MatRadioButton, MatRadioModule} from "@angular/material/radio";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
+import {MatSelectModule} from "@angular/material/select";
+import {MatSliderModule} from "@angular/material/slider";
+import {MatButtonModule} from "@angular/material/button";
+
 
 @NgModule({
   declarations: [
@@ -31,7 +38,7 @@ import { TableScheduleComponent } from './plans/components/table-schedule/table-
     MenuComponent,
     AccountComponent,
     PageNotFoundComponent,
-    TableScheduleComponent
+    TableScheduleComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,7 +46,15 @@ import { TableScheduleComponent } from './plans/components/table-schedule/table-
     MatToolbarModule,
     MatIconModule,
     FormsModule,
-    MatTableModule
+    MatTableModule,
+    MatRadioModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    FormsModule,
+    MatSliderModule,
+    MatButtonModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
