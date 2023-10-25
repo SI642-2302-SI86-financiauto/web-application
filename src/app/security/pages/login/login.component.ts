@@ -26,7 +26,10 @@ export class LoginComponent {
       } else {
         // Autenticación fallida
         this.loginError = true;
+
         console.log('Nombre de usuario o contraseña incorrectos');
+        alert("Usuario o contraseña incorrectos");
+
       }
     });
   }
