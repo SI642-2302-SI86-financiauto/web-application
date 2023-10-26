@@ -1,19 +1,21 @@
+
 <body>
+
   <div class="container">
     <div class="registration-form">
       <h2 class="welcome">Bienvenido</h2>
       <div class="contenedor-imagen">
         <img src='assets/logo-financiauto.jpg' alt="">
       </div>
-      <form>
+      <form (ngSubmit)="login()" #loginForm="ngForm">
         <div class="form-group">
-          <label for="email">Email*</label>
-          <input type="text" id="email" name="email" class="form-control" placeholder="Ej. pepitogrillo@email.com" required>
+          <label for="username">Email*</label>
+          <input type="username" id="username" name="username" placeholder="Ej. pepitogrillo@email.com" [(ngModel)]="username" class="form-control" required>
         </div>
 
         <div class="form-group">
           <label for="contrasena">Contraseña*</label>
-          <input type="password" id="contrasena" name="contrasena" class="form-control" required>
+          <input type="password" id="contrasena" name="contrasena" [(ngModel)]="password" class="form-control" required>
         </div>
         <div>
           <label><u>¿Olvidaste tu contraseña?</u></label>

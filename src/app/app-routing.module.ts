@@ -15,8 +15,8 @@ const routes: Routes = [
   {path: 'plans', component: ScheduleComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
-  {path: '**', component: PageNotFoundComponent},
-  {path: '', redirectTo: 'homepage', pathMatch: 'full'}
+  // {path: '**', component: PageNotFoundComponent},
+  {path: '', redirectTo: 'login', pathMatch: 'full'}
 ];
 
 @NgModule({

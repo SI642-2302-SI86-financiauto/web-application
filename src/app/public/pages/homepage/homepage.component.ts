@@ -12,4 +12,5 @@ export class HomepageComponent {
   redirigir() {
     this.router.navigate(['/credit']);
   }
+
 }

@@ -24,6 +24,7 @@ import {MatInputModule} from "@angular/material/input";
 import {MatSelectModule} from "@angular/material/select";
 import {MatSliderModule} from "@angular/material/slider";
 import {MatButtonModule} from "@angular/material/button";
+import {NgFor} from "@angular/common";
 
 
 @NgModule({
@@ -53,7 +54,8 @@ import {MatButtonModule} from "@angular/material/button";
     MatSelectModule,
     FormsModule,
     MatSliderModule,
-    MatButtonModule
+    MatButtonModule,
+    NgFor
 
   ],
   providers: [],
