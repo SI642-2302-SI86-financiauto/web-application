@@ -10,6 +10,7 @@ export class HomepageComponent {
   constructor(private router: Router) {}
 
   redirigir() {
+    this.router.navigate(['/credit']);
+  }
 
-   }
 }
