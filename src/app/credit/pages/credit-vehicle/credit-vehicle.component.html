@@ -8,6 +8,7 @@
   <div class="schedule__container">
     <h1>Cálculo del crédito vehícular</h1>
 
+
     <form (ngSubmit)="login()" #loginForm="ngForm">
 
 
@@ -97,37 +98,34 @@
       </div>
 
       <!--plazo de gracia!-->
-      <div class="frequency__payment">
+      <div class="grace__period">
         <div class="form-group">
           <h3>Plazo de gracia*</h3>
           <select name="grace" id="grace">
-            <option value="one">PARCIAL</option>
+            <option value="one">NINGUNO</option>
+            <option value="two">PARCIAL</option>
             <option value="two">TOTAL</option>
           </select>
-
         </div>
 
         <div class="form-group">
-          <h3>Periodo de plazo de gracia*</h3>
-          <input  type="text" name="numero"  id="period-grace" name="time-payment" placeholder="Ex: 20000" [(ngModel)]="time_payment" class="form-control" required oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+          <h3>Periodo plazo de gracia*</h3>
+          <input  type="text" name="numero"  id="period-grace" name="period-grace" placeholder="Ex: 20000" [(ngModel)]="time_payment" class="form-control" required oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+        </div>
+
+        <div class="form-group">
+          <h3>Plazo de crédito*</h3>
+          <input  type="text" name="numero"  id="period-credit" name="period-credit" placeholder="Ex: 20000" [(ngModel)]="time_payment" class="form-control" required oninput="this.value = this.value.replace(/[^0-9]/g, '')">
         </div>
 
       </div>
 
 
 
-
+      <div class="button-custom">
+        <button class="btn btn-success" type="submit">CALCULAR</button>
+      </div>
     </form>
-
-    <div class="form-group">
-      <button class="btn btn-success" type="submit">CALCULAR</button>
-    </div>
-
-
-
-
-
-
 
 
   </div>
