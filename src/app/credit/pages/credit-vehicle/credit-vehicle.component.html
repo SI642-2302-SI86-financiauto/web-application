@@ -1,4 +1,143 @@
-<div class="schedule__container">
+<div>
+  <app-header></app-header>
+  <div class="page">
+    <div class="menu-app">
+      <app-menu></app-menu>
+    </div>
+
+  <div class="schedule__container">
+    <h1>Cálculo del crédito vehícular</h1>
+
+    <form (ngSubmit)="login()" #loginForm="ngForm">
+
+
+      <!-- block2 tipo de moneda y costo del vehículo!-->
+      <div class="coin__vehicle">
+        <div class="coin">
+          <h3>Tipo de moneda</h3>
+          <div class="options">
+            <mat-radio-group >
+              <mat-radio-button value="after">Soles</mat-radio-button>
+              <mat-radio-button class="example-margin" value="before">Dolares</mat-radio-button>
+            </mat-radio-group>
+          </div>
+        </div>
+
+        <div class="vehicle__cost">
+
+
+           <!-- <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label>Cuota inicial</mat-label>
+              <input type="email" matInput [formControl]="vehicleFormControl" placeholder="Ex. 25000">
+              <mat-error *ngIf="vehicleFormControl.hasError('required')">
+                Costo del vehículo <strong>requerido</strong>
+              </mat-error>
+            </mat-form-field>!-->
+          <div class="form-group">
+            <h3>Costo del vehículo</h3>
+            <input  type="text" name="numero"  id="vehicle-value" name="vehicle-value" placeholder="Ex: 20000" [(ngModel)]="vehicle_value" class="form-control" required oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+          </div>
+        </div>
+      </div>
+
+
+      <!-- block3 tipo de moneda y costo del vehículo!-->
+      <div class="initial__final__fee">
+        <div class="form-group">
+          <h3>Cuota inicial a pagar (%)*</h3>
+          <input  type="text" name="numero"  id="initial-fee" name="initial-fee" placeholder="Ex: 20000" [(ngModel)]="initial_fee" class="form-control" required oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+        </div>
+
+
+        <div class="form-group">
+          <h3>Cuota final a pagar (%)*</h3>
+          <input  type="text" name="numero"  id="final-fee" name="final-fee" placeholder="Ex: 20000" [(ngModel)]="final_fee" class="form-control" required oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+        </div>
+      </div>
+
+      <!-- block4 tasas!-->
+      <div class="coin__vehicle">
+        <div class="coin">
+          <h3>Tipo de tasa</h3>
+          <div class="options">
+            <mat-radio-group >
+              <mat-radio-button value="after">Tasa Nominal</mat-radio-button>
+              <mat-radio-button class="example-margin" value="before">Tasa Efectiva</mat-radio-button>
+            </mat-radio-group>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <h3>Valor de la tasa (%)*</h3>
+          <input  type="text" name="numero"  id="rate-value" name="rate-value" placeholder="Ex: 20000" [(ngModel)]="rate_value" class="form-control" required oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+        </div>
+
+
+      </div>
+
+      <!--frecuencia de pago!-->
+      <div class="frequency__payment">
+        <div class="form-group">
+          <h3>Frecuencia de pago*</h3>
+          <select name="tasa" id="tasa">
+            <option value="one">QUINCENAL</option>
+            <option value="two">MENSUAL</option>
+            <option value="three">TRIMESTRAL</option>
+            <option value="four">SEMESTRAL</option>
+            <option value="five">ANUAL</option>
+          </select>
+
+        </div>
+
+        <div class="form-group">
+          <h3>Tiempo a pagar*</h3>
+          <input  type="text" name="numero"  id="time-payment" name="time-payment" placeholder="Ex: 20000" [(ngModel)]="time_payment" class="form-control" required oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+        </div>
+
+      </div>
+
+      <!--plazo de gracia!-->
+      <div class="frequency__payment">
+        <div class="form-group">
+          <h3>Plazo de gracia*</h3>
+          <select name="grace" id="grace">
+            <option value="one">PARCIAL</option>
+            <option value="two">TOTAL</option>
+          </select>
+
+        </div>
+
+        <div class="form-group">
+          <h3>Periodo de plazo de gracia*</h3>
+          <input  type="text" name="numero"  id="period-grace" name="time-payment" placeholder="Ex: 20000" [(ngModel)]="time_payment" class="form-control" required oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+        </div>
+
+      </div>
+
+
+
+
+    </form>
+
+    <div class="form-group">
+      <button class="btn btn-success" type="submit">CALCULAR</button>
+    </div>
+
+
+
+
+
+
+
+
+  </div>
+
+
+
+
+  </div>
+</div>
+<!--<div class="schedule__container">
   <h1 class="text">Calculo de crédito vehícular</h1>
 
   <div class="moneda">
@@ -92,3 +231,4 @@
 
 
 </div>
+!-->

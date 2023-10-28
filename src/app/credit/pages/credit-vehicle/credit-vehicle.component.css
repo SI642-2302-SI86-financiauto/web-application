@@ -1,31 +1,114 @@
+.page {
+  display: flex;
+  border: 2px solid black;
+  height: 100%;
+
+}
+
 .schedule__container {
   display: flex;
+  align-items: center;
   flex-direction: column;
+  width: 80%;
   height: auto;
   min-height: 100%;
   background-color: white;
-  margin: 20px;
+  margin-right: 20px;
+  margin-top: 20px;
   border-radius: 10px;
   padding: 50px;
   row-gap: 20px;
-
 }
 
-.text {
-  display: flex;
-  justify-content: center;
+
+/*BLOCK 1*/
+h1 {
+  color: #111233;
 }
 
-.moneda {
+/*BLOCK 2*/
+.coin__vehicle {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
+}
+
+.coin {
+  display: flex;
+  flex-flow: column wrap;
 }
 
 .options {
   display: flex;
   flex-flow: row wrap;
 }
+
+.vehicle__cost {
+
+}
+
+.form-group input {
+  border-radius: 0.4rem;
+  border-width: 1px;
+  height: 2rem;
+  padding-left:16px ;
+}
+
+mat-form-field {
+  width: 400px;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+
+.initial__final__fee {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+
+.rate__type {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.frequency__payment {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.form-group select {
+  border-radius: 0.4rem;
+  border-width: 1px;
+  height: 2rem;
+  padding-left:16px ;
+}
+
+.btn-success {
+  background-color: #151d3a;
+  border: 0;
+  border-radius: 4px;
+  padding: 10px 30px;
+  color: white;
+  cursor: pointer;
+}
+
+
+
+
+
+
+ .moneda {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+
 
 .example-margin {
   margin-right: 10px;
@@ -70,12 +153,12 @@
   flex-flow: column wrap;
 }
 
-.title {
+/*.title {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
 
-}
+}*/
 
 mat-slider {
 
