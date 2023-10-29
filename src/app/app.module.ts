@@ -15,7 +15,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { AccountComponent } from './profile/pages/account/account.component';
 import { PageNotFoundComponent } from './public/pages/page-not-found/page-not-found.component';
 import {MatIconModule} from "@angular/material/icon";
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatTableModule} from "@angular/material/table";
 import { TableScheduleComponent } from './plans/components/table-schedule/table-schedule.component';
 import {MatRadioButton, MatRadioModule} from "@angular/material/radio";
@@ -25,6 +25,7 @@ import {MatSelectModule} from "@angular/material/select";
 import {MatSliderModule} from "@angular/material/slider";
 import {MatButtonModule} from "@angular/material/button";
 import {NgFor} from "@angular/common";
+import {MatDatepickerModule} from "@angular/material/datepicker";
 
 
 @NgModule({
@@ -55,7 +56,10 @@ import {NgFor} from "@angular/common";
     FormsModule,
     MatSliderModule,
     MatButtonModule,
-    NgFor
+    NgFor,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatDatepickerModule
 
   ],
   providers: [],

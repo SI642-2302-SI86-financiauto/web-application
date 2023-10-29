@@ -1,28 +1,29 @@
 import { Component } from '@angular/core';
-interface Food {
-  value: string;
-  viewValue: string;
-}
+import {FormControl, FormGroupDirective, NgForm, Validators} from "@angular/forms";
+import {ErrorStateMatcher} from "@angular/material/core";
+
+
+
 @Component({
   selector: 'app-credit-vehicle',
   templateUrl: './credit-vehicle.component.html',
   styleUrls: ['./credit-vehicle.component.css']
 })
 export class CreditVehicleComponent {
-
-  foods: Food[] = [
-    {value: 'steak-0', viewValue: 'Steak'},
-    {value: 'pizza-1', viewValue: 'Pizza'},
-    {value: 'tacos-2', viewValue: 'Tacos'},
-  ];
-  disabled = false;
-  max = 100;
-  min = 0;
-  showTicks = false;
-  step = 1;
-  thumbLabel = false;
-  value = 0;
+  username: string = '';
+  vehicle_value: number = 0;
+  initial_fee: number = 0;
+  final_fee: number = 0;
+  rate_value: number = 0;
+  time_payment: number = 0;
+  graced_period: number = 0;
 
 
-  protected readonly Component = Component;
+
+  onSubmit(): void {
+
+  }
+
+
+  protected readonly onsubmit = onsubmit;
 }
