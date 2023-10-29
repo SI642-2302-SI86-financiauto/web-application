@@ -78,6 +78,7 @@ h1 {
 
 .form-group {
   margin-bottom: 20px;
+  width: 190px;
 }
 
 .form-group select {
@@ -119,4 +120,6 @@ form  {
   justify-content: center;
 }
 
-
+.custom-select select {
+  width: 190px;
+}
