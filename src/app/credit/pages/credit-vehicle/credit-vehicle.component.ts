@@ -16,14 +16,14 @@ export class CreditVehicleComponent {
   final_fee: number = 0;
   rate_value: number = 0;
   time_payment: number = 0;
+  graced_period: number = 0;
 
 
 
-  login(): void {}
-  feeFormControl = new FormControl('', [Validators.required]);
-  vehicleFormControl = new FormControl('', [Validators.required]);
-  finalFeeFormControl = new FormControl('', [Validators.required]);
+  onSubmit(): void {
+
+  }
 
 
-
+  protected readonly onsubmit = onsubmit;
 }
