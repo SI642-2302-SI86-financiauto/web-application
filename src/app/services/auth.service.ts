@@ -1,10 +1,21 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import {Observable, of, tap} from 'rxjs';
+import { BaseService } from '../shared/services/base.service';
+import { User } from '../security/model/user';
+import {HttpClient} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
+export class AuthService extends BaseService<User>{
+
+  endPoint = '/user';
+
+  constructor(http: HttpClient) {
+    super(http);
+    this.basePath += this.endPoint;
+  }
+
 
   private users: any[] = [
     { username: 'usuario1', password: 'contrasena1' },
@@ -22,5 +33,22 @@ export class AuthService {
       return of([]);
     }
   }
+
+  /*login2() {
+    this.authService.getAll1().subscribe((response: any) => {
+      const user = response.content?.find((a: any) => {
+        this.currentUser = a;
+        return a.email === this.loginForm.value.username && a.password === this.loginForm.value.password;
+      });
+
+      if (user) {
+        sessionStorage.setItem("userId", this.currentUser.id.toString());
+      } else {
+        alert("Incorrect email or password. Please try again.");
+      }
+    });
+  }*/
+
+
 }
 
