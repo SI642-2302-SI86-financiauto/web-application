@@ -3,7 +3,7 @@ export interface Credit {
   userId: number;
   numYears: number;
   sellingPrice: number;
-  initQuotePercentage: number;
+  initQuotePercent: number;
   rateType: string,
   rateValue: number;
   endQuotePercent: number;
@@ -19,7 +19,7 @@ export class Credit {
     public userId: number,
     public numYears: number,
     public sellingPrice: number,
-    public initQuotePercentage: number,
+    public initQuotePercent: number,
     public rateType: string,
     public rateValue: number,
     public endQuotePercent: number,

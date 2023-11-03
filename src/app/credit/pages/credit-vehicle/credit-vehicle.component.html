@@ -27,7 +27,7 @@
         <div class="vehicle__cost">
           <div class="i-group">
             <h3>Costo del vehículo</h3>
-            <input  type="text"    placeholder="Ex: 20000" [(ngModel)]="credit.sellingPrice"  formControlName="sellingPrice" required >
+            <input  type="number"  matinput  placeholder="Ex: 20000" [(ngModel)]="credit.sellingPrice"  formControlName="sellingPrice" required >
           </div>
         </div>
       </div>
@@ -37,13 +37,13 @@
       <div class="initial__final__fee">
         <div class="i-group">
           <h3>Cuota inicial a pagar (%)*</h3>
-          <input  type="text"   id="initial-fee" name="initial-fee" placeholder="Ex: 20000" [(ngModel)]="credit.initQuotePercentage"  formControlName="initQuotePercentage" required >
+          <input type="number"  matinput   id="initial-fee" name="initial-fee" placeholder="Ex: 20000" [(ngModel)]="credit.initQuotePercent"  formControlName="initQuotePercent" required >
         </div>
 
 
         <div class="i-group">
           <h3>Cuota final a pagar (%)*</h3>
-          <input  type="text"    id="final-fee" name="final-fee" placeholder="Ex: 20000" [(ngModel)]="credit.endQuotePercent" formControlName="endQuotePercent" required >
+          <input type="number"  matinput    id="final-fee" name="final-fee" placeholder="Ex: 20000" [(ngModel)]="credit.endQuotePercent" formControlName="endQuotePercent" required >
         </div>
       </div>
 
@@ -53,15 +53,15 @@
           <h3>Tipo de tasa</h3>
           <div class="options">
             <mat-radio-group formControlName="rateType" [(ngModel)]="credit.rateType">
-              <mat-radio-button value="nominal">Tasa Nominal</mat-radio-button>
-              <mat-radio-button class="example-margin" value="efectiva">Tasa Efectiva</mat-radio-button>
+              <mat-radio-button value="NOMINAL">NOMINAL</mat-radio-button>
+              <mat-radio-button class="example-margin" value="EFFECTIVE">EFFECTIVE</mat-radio-button>
             </mat-radio-group>
           </div>
         </div>
 
         <div class="i-group">
           <h3>Valor de la tasa (%)*</h3>
-          <input  type="text"   id="rate-value" name="rate-value" placeholder="Ex: 20000" [(ngModel)]="credit.rateValue" formControlName="rateValue" required >
+          <input  type="number"  matinput   id="rate-value" name="rate-value" placeholder="Ex: 20000" [(ngModel)]="credit.rateValue" formControlName="rateValue" required >
         </div>
 
 
@@ -72,11 +72,11 @@
         <div class="i-group">
           <h3>Frecuencia de pago*</h3>
           <select class="i-group" name="tasa" id="tasa" formControlName="frequencyPayment" [(ngModel)]="credit.paymentFrecuency" >
-            <option value="quincenal">QUINCENAL</option>
-            <option value="mensual">MENSUAL</option>
-            <option value="trimestral">TRIMESTRAL</option>
-            <option value="semestral">SEMESTRAL</option>
-            <option value="anual">ANUAL</option>
+            <option value="FORTNIGHTLY">FORTNIGHTLY</option>
+            <option value="MONTHLY">MONTHLY</option>
+            <option value="QUARTERLY">QUARTERLY</option>
+            <option value="SEMIANNUALLY">SEMIANNUALLY</option>
+            <option value="ANNUALLY">ANNUALLY</option>
           </select>
 
         </div>
@@ -84,8 +84,8 @@
         <div class="i-group">
           <h3>Plazo de crédito en años*</h3>
           <select class="custom-select i-group" name="period-credit" id="period-credit" formControlName="numYears" [(ngModel)]="credit.numYears">
-            <option value="two">2</option>
-            <option value="three">3</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
           </select>
         </div>
 
@@ -96,16 +96,16 @@
         <div class="i-group">
           <h3>Plazo de gracia*</h3>
           <select name="grace" class="i-group" id="grace" formControlName="gracePeriod" [(ngModel)]="credit.gracePeriodType" >
-            <option value="ninguno">NINGUNO</option>
-            <option value="parcial">PARCIAL</option>
-            <option value="total">TOTAL</option>
+            <option value="TOTALLY">TOTALLY</option>
+            <option value="PARTIALLY">PARTIALLY</option>
+            <option value="NONE">NONE</option>
           </select>
         </div>
 
         <div class="i-group">
           <h3>Periodo plazo de gracia*</h3>
           <!--<input  type="text"   id="rate-value" name="rate-value" placeholder="Ex: 20000" [(ngModel)]="credit.rateValue" formControlName="rateValue" required >!-->
-          <input  type="text"  id="period-grace" name="period-grace" placeholder="Ex: 20000" [(ngModel)]="credit.numGracePeriods"  formControlName="numGracePeriods" required >
+          <input type="number"  matinput  id="period-grace" name="period-grace" placeholder="Ex: 20000" [(ngModel)]="credit.numGracePeriods"  formControlName="numGracePeriods" required >
         </div>
       </div>
 

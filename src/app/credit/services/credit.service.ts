@@ -29,5 +29,35 @@ export class CreditService extends BaseService<Credit>{
 
   }
 
+  /*getAllCredits(): Observable<any> {
+    return this.http.get( `${this.basePath}`);
+  }*/
+
+
+  /*getMyLastCredit(): number {
+    const getAllCreditUrl = `${this.basePath}`;
+    const userId = localStorage.getItem('userId');
+
+    if (!userId) {
+      throw new Error(' No se encontró el usuario registrado en el localStorage.');
+    }
+
+     creditsList: Credit[] = [];
+
+    const myCredits: Credit[] = [];
+    this.http.get(getAllCreditUrl).subscribe((response: any) =>{
+      this.creditsList = response;
+
+    })
+  }
+
+    // Suponiendo que la respuesta es un arreglo de objetos de crédito, puedes asignarla directamente a tu lista de créditos
+
+
+
+
+    return 0;
+  }*/
+
 
 }

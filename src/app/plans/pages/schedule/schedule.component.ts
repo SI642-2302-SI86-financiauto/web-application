@@ -1,11 +1,17 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
+import {CreditService} from "../../../credit/services/credit.service";
+import {take} from "rxjs";
+import {Credit} from "../../../credit/model/credit";
 
 @Component({
   selector: 'app-schedule',
   templateUrl: './schedule.component.html',
   styleUrls: ['./schedule.component.css']
 })
-export class ScheduleComponent {
+export class ScheduleComponent implements OnInit{
+    credits: Credit[]=[];
+    myCredits: Credit[]=[];
   schedule: any[] = [
     {
       id: 1,
@@ -27,4 +33,17 @@ export class ScheduleComponent {
       final_balance: 8000
     },
     ];
+    constructor(private route: ActivatedRoute, private navigator:Router, private creditService: CreditService) {
+
+    }
+  ngOnInit(): void {
+
+      this.route.params.pipe( take(1)).subscribe((params) => {
+          const id = params['id'];
+
+
+
+      });
+  }
+
 }

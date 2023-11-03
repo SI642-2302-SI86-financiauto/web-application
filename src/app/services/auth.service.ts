@@ -34,21 +34,8 @@ export class AuthService extends BaseService<User>{
     }
   }
 
-  /*login2() {
-    this.authService.getAll1().subscribe((response: any) => {
-      const user = response.content?.find((a: any) => {
-        this.currentUser = a;
-        return a.email === this.loginForm.value.username && a.password === this.loginForm.value.password;
-      });
-
-      if (user) {
-        sessionStorage.setItem("userId", this.currentUser.id.toString());
-      } else {
-        alert("Incorrect email or password. Please try again.");
-      }
-    });
-  }*/
-
+  getAllUsers(): Observable<any> {
+    return this.http.get( `${this.basePath}`);
+  }
 
 }
-
