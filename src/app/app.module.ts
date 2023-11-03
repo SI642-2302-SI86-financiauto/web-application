@@ -26,6 +26,8 @@ import {MatSliderModule} from "@angular/material/slider";
 import {MatButtonModule} from "@angular/material/button";
 import {NgFor} from "@angular/common";
 import {MatDatepickerModule} from "@angular/material/datepicker";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {HttpClientModule} from "@angular/common/http";
 
 
 @NgModule({
@@ -59,8 +61,9 @@ import {MatDatepickerModule} from "@angular/material/datepicker";
     NgFor,
     MatFormFieldModule,
     ReactiveFormsModule,
-    MatDatepickerModule
-
+    MatDatepickerModule,
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

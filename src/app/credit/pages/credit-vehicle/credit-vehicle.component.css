@@ -1,6 +1,5 @@
 .page {
   display: flex;
-  border: 2px solid black;
   height: 100%;
 
 }
@@ -49,7 +48,7 @@ h1 {
 
 }
 
-.form-group input {
+.i-group input {
   border-radius: 0.4rem;
   border-width: 1px;
   height: 2rem;
@@ -76,12 +75,12 @@ h1 {
   gap: 30px;
 }
 
-.form-group {
+.i-group {
   margin-bottom: 20px;
   width: 190px;
 }
 
-.form-group select {
+.i-group select {
   border-radius: 0.4rem;
   border-width: 1px;
   height: 2rem;

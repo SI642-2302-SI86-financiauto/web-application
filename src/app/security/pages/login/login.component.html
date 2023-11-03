@@ -1,36 +1,35 @@
-
 <body>
 
-  <div class="container">
-    <div class="registration-form">
-      <h2 class="welcome">Bienvenido</h2>
-      <div class="contenedor-imagen">
-        <img src='assets/logo-financiauto.jpg' alt="">
+<div class="container">
+  <div class="registration-form">
+    <h2 class="welcome">Bienvenido</h2>
+    <div class="contenedor-imagen">
+      <img src='assets/logo-financiauto.jpg' alt="">
+    </div>
+    <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+      <div class="form-group">
+        <label for="username">Email</label>
+        <input type="username" id="username" name="username" placeholder="Ej. pepitogrillo@email.com" [(ngModel)]="username" class="form-control" required>
       </div>
-      <form (ngSubmit)="login()" #loginForm="ngForm">
-        <div class="form-group">
-          <label for="username">Email*</label>
-          <input type="username" id="username" name="username" placeholder="Ej. pepitogrillo@email.com" [(ngModel)]="username" class="form-control" required>
-        </div>
 
-        <div class="form-group">
-          <label for="contrasena">Contraseña*</label>
-          <input type="password" id="contrasena" name="contrasena" [(ngModel)]="password" class="form-control" required>
-        </div>
-        <div>
-          <label><u>¿Olvidaste tu contraseña?</u></label>
-        </div>
-        <div class="form-group">
-          <button class="btn btn-success" type="submit">Registrarse</button>
-        </div>
-      </form>
+      <div class="form-group">
+        <label for="contrasena">Contraseña</label>
+        <input type="password" id="contrasena" name="contrasena" [(ngModel)]="password" class="form-control" required>
+      </div>
       <div>
-        <label>¿No tienes una cuenta? <u>Registrate ahora</u></label>
+        <label><u>¿Olvidaste tu contraseña?</u></label>
       </div>
+      <div class="form-group">
+        <button class="btn btn-success" type="submit">Registrarse</button>
+      </div>
+    </form>
+    <div>
+      <label>¿No tienes una cuenta? <u>Registrate ahora</u></label>
+    </div>
 
-    </div>
-    <div class="image-container">
-        <div class="image-car" style="background-image: url(assets/login/login-car.png);"></div>
-    </div>
   </div>
+  <div class="image-container">
+    <div class="image-car" style="background-image: url(assets/login/login-car.png);"></div>
+  </div>
+</div>
 </body>
