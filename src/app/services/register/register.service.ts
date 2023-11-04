@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { BaseService } from '../../shared/services/base.service';
-import { User } from '../../security/model/user';
+import { UserNotRegistered } from '../../security/model/user';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class RegisterService extends BaseService<User>{
+export class RegisterService extends BaseService<UserNotRegistered>{
   uri = '/user/create';
 
   constructor(http: HttpClient) {
