@@ -1,0 +1,25 @@
+<form [formGroup]="applyForm" (submit)="submitApplication()">
+  <div class="form-group">
+      <label for="nombre">Nombres</label>
+      <input type="text" id="nombre" name="nombre" class="form-control" formControlName="firstName" required>
+  </div>
+  <div class="form-group">
+      <label for="apellido">Apellidos</label>
+      <input type="text" id="apellido" name="apellido" class="form-control" formControlName="lastName" required>
+  </div>
+  <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" class="form-control" formControlName="email" required >
+  </div>
+  <div class="form-group">
+      <label for="fechaNacimiento">Fecha de nacimiento</label>
+      <input type="date" id="fechaNacimiento" name="fechaNacimiento" class="form-control" formControlName="dateOfBirth" required>
+  </div>
+  <div class="form-group">
+      <label for="contrasena">Contraseña*</label>
+      <input type="password" id="contrasena" name="contrasena" class="form-control" formControlName="password" required>
+  </div>
+  <div class="form-group">
+      <button class="btn btn-success" type="submit">Registrarse</button>
+  </div>
+</form>

@@ -28,6 +28,7 @@ import {NgFor} from "@angular/common";
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {HttpClientModule} from "@angular/common/http";
+import { FormComponent } from './security/components/form/form.component';
 
 
 @NgModule({
@@ -55,7 +56,6 @@ import {HttpClientModule} from "@angular/common/http";
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-    FormsModule,
     MatSliderModule,
     MatButtonModule,
     NgFor,
@@ -63,7 +63,8 @@ import {HttpClientModule} from "@angular/common/http";
     ReactiveFormsModule,
     MatDatepickerModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
