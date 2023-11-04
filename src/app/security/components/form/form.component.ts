@@ -1,9 +1,10 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpStatusCode } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { RegisterService } from 'src/app/services/register/register.service';
 import { BaseService } from 'src/app/shared/services/base.service';
 import { Observable } from 'rxjs';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'register-form',
@@ -15,7 +16,7 @@ import { Observable } from 'rxjs';
 
 })
 export class FormComponent {
-  constructor(private registerService: RegisterService){
+  constructor(private registerService: RegisterService, private router: Router){
 
   }
 
@@ -38,7 +39,12 @@ export class FormComponent {
       dateOfBirth:this.applyForm.value.dateOfBirth ?? ''
     })
     this.registerService.register(user).subscribe(data=>{
+
       console.log(data.status, data.body)
+      if(data.status == HttpStatusCode.Created){
+        this.router.navigateByUrl("/")
+      }
+
     });
 
 
