@@ -1,0 +1,28 @@
+
+h1 {
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  width: 400px;
+}
+
+label {
+  font-weight: bold;
+}
+
+.btn-success {
+  background-color: #151d3a;
+  border: 0;
+  border-radius: 4px;
+  padding: 10px 30px;
+  margin: 20px 120px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Establecer el ancho de los campos de entrada al 100% */
+.form-control {
+  width: 100%;
+}
