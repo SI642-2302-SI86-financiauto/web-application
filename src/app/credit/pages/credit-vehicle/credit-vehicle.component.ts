@@ -49,7 +49,7 @@ export class CreditVehicleComponent {
       this.creditService.createCredit(this.credit).subscribe(
         (createdCredit) => {console.log(this.credit);
           console.log('Crédito creado con éxito:', createdCredit);
-         /* this.creditService.getAll().subscribe((response: any) =>{
+         this.creditService.getAll().subscribe((response: any) =>{
               this.credits = response;
 
               this.myCredits = this.credits.filter(credit => credit.userId === userId);
@@ -63,7 +63,7 @@ export class CreditVehicleComponent {
                   console.log('No se encontraron créditos para el usuario.');
               }
 
-          })*/
+          })
 
 
 

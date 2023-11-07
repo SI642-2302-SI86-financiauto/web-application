@@ -1,5 +1,5 @@
-import {Component, Input} from '@angular/core';
-import {Schedule} from "../../model/schedule";
+import { Component, Input } from '@angular/core';
+import { Period } from '../../model/period';
 
 @Component({
   selector: 'app-table-schedule',
@@ -7,8 +7,8 @@ import {Schedule} from "../../model/schedule";
   styleUrls: ['./table-schedule.component.css']
 })
 export class TableScheduleComponent {
-  @Input() schedule: Schedule[] = [];
-  displayedColumns: string[] = ['id', 'tep', 'grace_period', 'initial_balance', 'interest', 'quota', 'final_balance'];
-  constructor() {
-  }
+  @Input() schedule: Period[] = [];
+  displayedColumns: string[] = ['periodIndex', 'tep', 'gracePeriodType', 'openBalance', 'interest', 'quote', 'endBalance'];
+
+  constructor() {}
 }
