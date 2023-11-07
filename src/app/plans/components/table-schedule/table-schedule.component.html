@@ -1,31 +1,31 @@
 <table mat-table [dataSource]="schedule" class="mat-elevation-z8">
-  <ng-container matColumnDef="id">
+  <ng-container matColumnDef="periodIndex">
     <th mat-header-cell *matHeaderCellDef>Nro</th>
-    <td mat-cell *matCellDef="let element">{{element.id}}</td>
+    <td mat-cell *matCellDef="let element">{{element.periodIndex}}</td>
   </ng-container>
   <ng-container matColumnDef="tep">
     <th mat-header-cell *matHeaderCellDef>TEP</th>
     <td mat-cell *matCellDef="let element">{{element.tep}}</td>
   </ng-container>
-  <ng-container matColumnDef="grace_period">
+  <ng-container matColumnDef="gracePeriodType">
     <th mat-header-cell *matHeaderCellDef>Plazo de gracia</th>
-    <td mat-cell *matCellDef="let element">{{element.grace_period}}</td>
+    <td mat-cell *matCellDef="let element">{{element.gracePeriodType}}</td>
   </ng-container>
-  <ng-container matColumnDef="initial_balance">
+  <ng-container matColumnDef="openBalance">
     <th mat-header-cell *matHeaderCellDef>Saldo Inicial</th>
-    <td mat-cell *matCellDef="let element">{{element.initial_balance}}</td>
+    <td mat-cell *matCellDef="let element">{{element.openBalance | currency:'USD':'symbol-narrow'}}</td>
   </ng-container>
   <ng-container matColumnDef="interest">
     <th mat-header-cell *matHeaderCellDef>Interés</th>
-    <td mat-cell *matCellDef="let element">{{element.interest}}</td>
+    <td mat-cell *matCellDef="let element">{{element.interest | currency:'USD':'symbol-narrow'}}</td>
   </ng-container>
-  <ng-container matColumnDef="quota">
+  <ng-container matColumnDef="quote">
     <th mat-header-cell *matHeaderCellDef>Cuota</th>
-    <td mat-cell *matCellDef="let element">{{element.quota}}</td>
+    <td mat-cell *matCellDef="let element">{{element.quote | currency:'USD':'symbol-narrow'}}</td>
   </ng-container>
-  <ng-container matColumnDef="final_balance">
+  <ng-container matColumnDef="endBalance">
     <th mat-header-cell *matHeaderCellDef>Saldo Final</th>
-    <td mat-cell *matCellDef="let element">{{element.final_balance}}</td>
+    <td mat-cell *matCellDef="let element">{{element.endBalance | currency:'USD':'symbol-narrow'}}</td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
