@@ -1,4 +1,124 @@
-<div class="schedule__container">
+<div>
+  <app-header></app-header>
+  <div class="page">
+    <div class="menu-app">
+      <app-menu></app-menu>
+    </div>
+
+  <div class="schedule__container">
+    <h1>Cálculo del crédito vehícular</h1>
+
+
+    <form [formGroup]="creditForm"  (ngSubmit)="onSubmit()"  >
+
+
+      <!-- block2 tipo de moneda y costo del vehículo!-->
+      <div class="coin__vehicle">
+        <div class="coin">
+          <h3>Tipo de moneda</h3>
+          <div class="options">
+            <mat-radio-group  formControlName="moneyType" >
+              <mat-radio-button value="after">Soles</mat-radio-button>
+              <mat-radio-button class="example-margin" value="before">Dolares</mat-radio-button>
+            </mat-radio-group>
+          </div>
+        </div>
+
+        <div class="vehicle__cost">
+          <div class="i-group">
+            <h3>Costo del vehículo</h3>
+            <input  type="number"  matinput  placeholder="Ex: 20000" [(ngModel)]="credit.sellingPrice"  formControlName="sellingPrice" required >
+          </div>
+        </div>
+      </div>
+
+
+      <!-- block3 tipo de moneda y costo del vehículo!-->
+      <div class="initial__final__fee">
+        <div class="i-group">
+          <h3>Cuota inicial a pagar (%)*</h3>
+          <input type="number"  matinput   id="initial-fee" name="initial-fee" placeholder="Ex: 20000" [(ngModel)]="credit.initQuotePercent"  formControlName="initQuotePercent" required >
+        </div>
+
+
+        <div class="i-group">
+          <h3>Cuota final a pagar (%)*</h3>
+          <input type="number"  matinput    id="final-fee" name="final-fee" placeholder="Ex: 20000" [(ngModel)]="credit.endQuotePercent" formControlName="endQuotePercent" required >
+        </div>
+      </div>
+
+      <!-- block4 tasas!-->
+      <div class="coin__vehicle">
+        <div class="coin">
+          <h3>Tipo de tasa</h3>
+          <div class="options">
+            <mat-radio-group formControlName="rateType" [(ngModel)]="credit.rateType">
+              <mat-radio-button value="NOMINAL">NOMINAL</mat-radio-button>
+              <mat-radio-button class="example-margin" value="EFFECTIVE">EFFECTIVE</mat-radio-button>
+            </mat-radio-group>
+          </div>
+        </div>
+
+        <div class="i-group">
+          <h3>Valor de la tasa (%)*</h3>
+          <input  type="number"  matinput   id="rate-value" name="rate-value" placeholder="Ex: 20000" [(ngModel)]="credit.rateValue" formControlName="rateValue" required >
+        </div>
+
+
+      </div>
+
+      <!--frecuencia de pago!-->
+      <div class="frequency__payment">
+        <div class="i-group">
+          <h3>Frecuencia de pago*</h3>
+          <select class="i-group" name="tasa" id="tasa" formControlName="frequencyPayment" [(ngModel)]="credit.paymentFrecuency" >
+            <option value="FORTNIGHTLY">FORTNIGHTLY</option>
+            <option value="MONTHLY">MONTHLY</option>
+            <option value="QUARTERLY">QUARTERLY</option>
+            <option value="SEMIANNUALLY">SEMIANNUALLY</option>
+            <option value="ANNUALLY">ANNUALLY</option>
+          </select>
+
+        </div>
+
+        <div class="i-group">
+          <h3>Plazo de crédito en años*</h3>
+          <select class="custom-select i-group" name="period-credit" id="period-credit" formControlName="numYears" [(ngModel)]="credit.numYears">
+            <option value=2>2</option>
+            <option value=3>3</option>
+          </select>
+        </div>
+
+      </div>
+
+      <!--plazo de gracia!-->
+      <div class="grace__period">
+        <div class="i-group">
+          <h3>Plazo de gracia*</h3>
+          <select name="grace" class="i-group" id="grace" formControlName="gracePeriod" [(ngModel)]="credit.gracePeriodType" >
+            <option value="TOTALLY">TOTALLY</option>
+            <option value="PARTIALLY">PARTIALLY</option>
+            <option value="NONE">NONE</option>
+          </select>
+        </div>
+
+        <div class="i-group">
+          <h3>Periodo plazo de gracia*</h3>
+          <!--<input  type="text"   id="rate-value" name="rate-value" placeholder="Ex: 20000" [(ngModel)]="credit.rateValue" formControlName="rateValue" required >!-->
+          <input type="number"  matinput  id="period-grace" name="period-grace" placeholder="Ex: 20000" [(ngModel)]="credit.numGracePeriods"  formControlName="numGracePeriods" required >
+        </div>
+      </div>
+
+      <div class="button-custom">
+        <button [disabled]="!creditForm.valid" mat-raised-button color="primary" class="btn btn-success" type="submit">CALCULAR</button>
+      </div>
+    </form>
+
+  </div>
+
+  </div>
+</div>
+<!--<div class="schedule__container">
   <h1 class="text">Calculo de crédito vehícular</h1>
 
   <div class="moneda">
@@ -92,3 +212,4 @@
 
 
 </div>
+!-->

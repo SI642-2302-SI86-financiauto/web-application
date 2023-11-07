@@ -1,30 +1,39 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { CreditService } from "../../../credit/services/credit.service";
+import { take } from "rxjs";
+import { Credit } from "../../../credit/model/credit";
+import { Period } from '../../model/period';
 
 @Component({
   selector: 'app-schedule',
   templateUrl: './schedule.component.html',
   styleUrls: ['./schedule.component.css']
 })
-export class ScheduleComponent {
-  schedule: any[] = [
-    {
-      id: 1,
-      tep: 0.01,
-      grace_period: 0,
-      initial_balance: 10000,
-      interest: 0.01,
-      quota: 1000,
-      final_balance: 9000
+export class ScheduleComponent implements OnInit {
+  credits: Credit[] = [];
+  myCredits: Credit[] = [];
+  schedule: Period[] = [];
 
-    },
-    {
-      id: 2,
-      tep: 0.01,
-      grace_period: 0,
-      initial_balance: 9000,
-      interest: 0.01,
-      quota: 1000,
-      final_balance: 8000
-    },
-    ];
+  constructor(private route: ActivatedRoute, private router: Router, private creditService: CreditService) {}
+
+  ngOnInit(): void {
+    const userIdString = localStorage.getItem('userId');
+    if (userIdString !== null) {
+      const userId = Number(userIdString);
+      this.creditService.getAll().pipe(take(1)).subscribe((response: any) => {
+        this.credits = response;
+        this.credits.forEach((credit) => {
+          if (credit.userId === userId) {
+            this.myCredits.push(credit);
+          }
+        });
+        const creditId = this.myCredits[this.myCredits.length - 1].id;
+        this.creditService.getPaymentSchedule(creditId).pipe(take(1)).subscribe((response: any) => {
+          this.schedule = response;
+          console.log('Datos de schedule:', this.schedule); // Agrega esta línea
+        });
+      });
+    }
+  }
 }

@@ -1,25 +1,42 @@
+.page {
+  display: flex;
+  height: 100%;
+
+}
+
 .schedule__container {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   flex-direction: column;
+  width: 100%;
   height: auto;
   min-height: 100%;
   background-color: white;
-  margin: 20px;
+  margin-right: 20px;
+  margin-top: 20px;
   border-radius: 10px;
-  padding: 50px;
+  padding:50px 0px;
   row-gap: 20px;
-
 }
 
-.text {
-  display: flex;
-  justify-content: center;
+
+/*BLOCK 1*/
+h1 {
+  color: #111233;
 }
 
-.moneda {
+/*BLOCK 2*/
+.coin__vehicle {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
+  gap: 30px;
+}
+
+.coin {
+  display: flex;
+  flex-flow: column wrap;
 }
 
 .options {
@@ -27,61 +44,81 @@
   flex-flow: row wrap;
 }
 
-.example-margin {
-  margin-right: 10px;
+.vehicle__cost {
+
 }
 
-.tasa {
+.i-group input {
+  border-radius: 0.4rem;
+  border-width: 1px;
+  height: 2rem;
+  padding-left:16px ;
+}
+
+
+.initial__final__fee {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
 }
 
-.cuotas {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-}
 
-.frecuencia__pago {
-  display: flex;
-  flex-flow: row wrap;
-
-  gap: 61px;
-
-}
-
-.frecuencia {
+.rate__type {
   display: flex;
   flex-flow: column wrap;
 }
 
-.example-label-container {
-  display: flex;
-  justify-content: space-between;
-  margin: 20px 10px 0;
-  max-width: 284px;
-}
-
-.slider {
-
-  width: 70%;
-  display: flex;
-  flex-flow: column wrap;
-}
-
-.title {
+.frequency__payment {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-
+  gap: 30px;
 }
 
-mat-slider {
-
+.i-group {
+  margin-bottom: 20px;
+  width: 190px;
 }
+
+.i-group select {
+  border-radius: 0.4rem;
+  border-width: 1px;
+  height: 2rem;
+}
+
+.grace__period {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.btn-success {
+  background-color: #151d3a;
+  border: 0;
+  border-radius: 4px;
+  padding: 10px 30px;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+form  {
+  display: flex;
+  flex-flow: column wrap;
+
+  align-content: center;
+}
+
 
 .button-custom {
   display: flex;
   justify-content: center;
+}
+
+.custom-select select {
+  width: 190px;
 }
