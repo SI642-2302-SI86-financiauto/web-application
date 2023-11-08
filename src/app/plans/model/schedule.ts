@@ -1,18 +1,20 @@
 export class Schedule {
-  id: number;
-  tep: string;
-  grace_period: number;
-  initial_balance: string;
-  interest: string;
-  quota: string;
-  final_balance: string;
+  periodIndex: number;
+  tep: number;
+  gracePeriodType: string;
+  openBalance: number;
+  interest: number;
+  quote: number;
+  amortization: number;
+  endBalance: number;
   constructor() {
-        this.id = 0;
-        this.tep = '';
-        this.grace_period = 0;
-        this.initial_balance = '';
-        this.interest = '';
-        this.quota = '';
-        this.final_balance = '';
+        this.periodIndex = 0;
+        this.tep = 0;
+        this.gracePeriodType = '';
+        this.openBalance = 0;
+        this.interest = 0;
+        this.quote = 0;
+        this.amortization = 0;
+        this.endBalance = 0;
     }
 }

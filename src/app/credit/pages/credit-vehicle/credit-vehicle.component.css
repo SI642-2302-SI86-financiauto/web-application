@@ -122,3 +122,12 @@ form  {
 .custom-select select {
   width: 190px;
 }
+
+.error-message {
+  color: red;
+  font-size: 12px;
+}
+
+.input-error {
+    border-color: red;
+}

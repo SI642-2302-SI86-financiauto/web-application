@@ -5,6 +5,8 @@
 
 .schedule__container {
   display: flex;
+  justify-contents: center;
+  align-items: center;
   flex-direction: column;
   height: 80%;
   width: 100%;

@@ -8,7 +8,7 @@ import {Schedule} from "../../model/schedule";
 })
 export class TableScheduleComponent {
   @Input() schedule: Schedule[] = [];
-  displayedColumns: string[] = ['id', 'tep', 'grace_period', 'initial_balance', 'interest', 'quota', 'final_balance'];
+  displayedColumns: string[] = ['periodIndex', 'tep', 'gracePeriodType', 'openBalance', 'interest', 'quote','amortization', 'endBalance'];
   constructor() {
   }
 }

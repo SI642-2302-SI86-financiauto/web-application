@@ -3,6 +3,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {CreditService} from "../../../credit/services/credit.service";
 import {take} from "rxjs";
 import {Credit} from "../../../credit/model/credit";
+import {Schedule} from "../../model/schedule";
 
 @Component({
   selector: 'app-schedule',
@@ -10,8 +11,8 @@ import {Credit} from "../../../credit/model/credit";
   styleUrls: ['./schedule.component.css']
 })
 export class ScheduleComponent implements OnInit{
-    credits: Credit[]=[];
-    myCredits: Credit[]=[];
+
+    mySchedule$: Schedule[]=[];
   schedule: any[] = [
     {
       id: 1,
@@ -41,7 +42,9 @@ export class ScheduleComponent implements OnInit{
       this.route.params.pipe( take(1)).subscribe((params) => {
           const id = params['id'];
 
-
+          this.creditService.getScheduleByCreditId(id).subscribe((response:any)=>{
+            this.mySchedule$ = response;
+          })
 
       });
   }
