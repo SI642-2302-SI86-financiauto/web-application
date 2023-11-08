@@ -52,7 +52,9 @@ export class LoginComponent implements OnInit{
         console.log('Usuario autenticado con éxito:', user);
         this.router.navigate(['/homepage']);
         localStorage.setItem('userId', String(user.id));
-        localStorage.setItem('username', String(user.username));
+        localStorage.setItem('firstName', String(user.firstName));
+        localStorage.setItem('lastName', String(user.lastName));
+        localStorage.setItem('email', String(user.email));
         localStorage.setItem('password', String(user.password));
 
         const userId = localStorage.getItem('userId')

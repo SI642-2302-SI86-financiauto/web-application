@@ -1,13 +1,19 @@
+
   <div class="container">
+    <div class="page">
+      <div class="menu-app">
+        <app-menu></app-menu>
+      </div>
+    </div>
     <div class="panel">
       <div class="account-container">
         <div class="panel">
           <img src="assets/logo-financiauto.jpg" alt="Logo de la cuenta" class="logo">
           
           <div class="user-info">
-            <p>Nombres: [Nombres de Usuario]</p>
-            <p>Apellidos: [Apellidos de Usuario]</p>
-            <p>Email: [Email de Usuario]</p>
+            <p>Nombres: {{userName}}</p>
+            <p>Apellidos: {{lastName}}</p>
+            <p>Email: {{email}}</p>
           </div>
           
           <h2>Actualizar Contraseña</h2>
