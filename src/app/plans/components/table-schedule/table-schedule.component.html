@@ -23,6 +23,10 @@
     <th mat-header-cell *matHeaderCellDef>Cuota</th>
     <td mat-cell *matCellDef="let element">{{element.quote | currency:'USD':'symbol-narrow'}}</td>
   </ng-container>
+  <ng-container matColumnDef="amortization">
+    <th mat-header-cell *matHeaderCellDef>Amortización</th>
+    <td mat-cell *matCellDef="let element">{{element.amortization | currency:'USD':'symbol-narrow'}}</td>
+  </ng-container>
   <ng-container matColumnDef="endBalance">
     <th mat-header-cell *matHeaderCellDef>Saldo Final</th>
     <td mat-cell *matCellDef="let element">{{element.endBalance | currency:'USD':'symbol-narrow'}}</td>

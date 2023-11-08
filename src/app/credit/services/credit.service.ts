@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Credit} from "../model/credit";
-import {Observable, tap} from "rxjs";
+import {catchError, Observable, retry, tap} from "rxjs";
 import { BaseService } from 'src/app/shared/services/base.service';
+import {Schedule} from "../../plans/model/schedule";
 
 @Injectable({
   providedIn: 'root'
@@ -64,5 +65,20 @@ export class CreditService extends BaseService<Credit>{
     return 0;
   }*/
 
+  getScheduleByCreditId(id: number): Observable<Schedule>{
+    const getScheduleByCreditIdUrl = `${this.basePath}/${id}/schedule`;
+    const userId = localStorage.getItem('userId');
+
+
+    if (!userId) {
+      throw new Error(' No se encontró el usuario registrado en el localStorage.');
+    }
+
+    return this.http.get<Schedule>(getScheduleByCreditIdUrl)
+      .pipe(
+        retry(2),
+        catchError(this.handleError));
+
+  }
 
 }

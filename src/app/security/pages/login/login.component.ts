@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit{
   users: any[] = [];
   form: FormGroup;
 
+
   constructor(private authService: AuthService, private router: Router, private fb: FormBuilder,) {
     this.form = this.fb.group({
       username: ['', Validators.required],
@@ -51,14 +52,18 @@ export class LoginComponent implements OnInit{
         console.log('Usuario autenticado con éxito:', user);
         this.router.navigate(['/homepage']);
         localStorage.setItem('userId', String(user.id));
+        localStorage.setItem('username', String(user.username));
+        localStorage.setItem('password', String(user.password));
+
         const userId = localStorage.getItem('userId')
         console.log(userId);
       } else {
         console.log('Credenciales incorrectas o usuario no encontrado.');
-        this.router.navigate(['/credit']);
+        alert("Usuario o contraseña incorrectos");
       }
     } else {
       console.log('Error: No se han cargado los datos de usuario.');
+
     }
   }
 

@@ -1,5 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {Component} from '@angular/core';
+import {AbstractControl, FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Credit} from "../../model/credit";
 import {ActivatedRoute, Router} from "@angular/router";
 import {CreditService} from "../../services/credit.service";
@@ -12,6 +12,7 @@ import {CreditService} from "../../services/credit.service";
   templateUrl: './credit-vehicle.component.html',
   styleUrls: ['./credit-vehicle.component.css']
 })
+
 export class CreditVehicleComponent {
   username: string = '';
   credits: Credit[]=[];
@@ -49,24 +50,20 @@ export class CreditVehicleComponent {
       this.creditService.createCredit(this.credit).subscribe(
         (createdCredit) => {console.log(this.credit);
           console.log('Crédito creado con éxito:', createdCredit);
-         this.creditService.getAll().subscribe((response: any) =>{
+          this.creditService.getAll().subscribe((response: any) =>{
               this.credits = response;
 
               this.myCredits = this.credits.filter(credit => credit.userId === userId);
 
               if (this.myCredits.length > 0) {
-                  // Utiliza pop() para obtener y remover el último elemento del arreglo
+                  // Utiliza pop() para obtener y removerel último elemento del arreglo
                   const ultimoCreditoId = this.myCredits.pop()?.id;
                   console.log('Último crédito:', ultimoCreditoId);
                   this.router.navigate([`/plans/${ultimoCreditoId}`]);
               } else {
                   console.log('No se encontraron créditos para el usuario.');
               }
-
           })
-
-
-
         },
         (error) => {
           console.error('Error al crear el crédito:', error);
@@ -79,19 +76,27 @@ export class CreditVehicleComponent {
 
   creditForm: FormGroup = this.formBuilder.group({
     numYears: ['', {validators: [Validators.required], updatedOn: 'change'}],
-    sellingPrice: ['', {validators: [Validators.required], updatedOn: 'change'}],
-    initQuotePercent: ['', {validators: [Validators.required]}],
+    sellingPrice: ['', { validators: [Validators.required, this.validatePositiveNumber], updatedOn: 'change' }],
+    initQuotePercent: ['', { validators: [Validators.required, this.validatePositiveNumber], updatedOn: 'change' }],
     rateType: ['', {validators: [Validators.required], updatedOn: 'change'}],
-    rateValue: ['', {validators: [Validators.required], updatedOn: 'change'}],
-    endQuotePercent: ['', {validators: [Validators.required], updatedOn: 'change'}],
+    rateValue: ['', { validators: [Validators.required, this.validatePositiveNumber], updatedOn: 'change' }],
+    endQuotePercent: ['', { validators: [Validators.required, this.validatePositiveNumber], updatedOn: 'change' }],
     frequencyPayment: ['', {validators: [Validators.required], updatedOn: 'change'}],
-    gracePeriod: ['', {validators: [Validators.required], updatedOn: 'change'}],
-    numGracePeriods: ['', {validators: [Validators.required], updatedOn: 'change'}],
+    gracePeriod: ['', { validators: [Validators.required], updatedOn: 'change' }],
+    numGracePeriods: ['', { validators: [Validators.required,], updatedOn: 'change' }],
     moneyType: ['', {validators: [Validators.required], updatedOn: 'change'}],
   })
 
 
 
+    validatePositiveNumber(control: AbstractControl) {
+        const value = control.value;
 
+        if (value <= 0) {
+            return { notPositive: true };
+        }
+
+        return null;
+    }
 
 }
