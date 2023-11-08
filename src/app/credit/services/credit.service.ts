@@ -34,6 +34,11 @@ export class CreditService extends BaseService<Credit>{
     return this.http.get( `${this.basePath}`);
   }*/
 
+  getPaymentSchedule(creditId: number): Observable<any> {
+    const getPaymentScheduleUrl = `${this.basePath}/${creditId}/schedule`;
+    return this.http.get(getPaymentScheduleUrl);
+  }
+
 
   /*getMyLastCredit(): number {
     const getAllCreditUrl = `${this.basePath}`;
