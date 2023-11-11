@@ -1,33 +1,38 @@
 
-  <div class="container">
-    <div class="page">
-      <div class="menu-app">
-        <app-menu></app-menu>
-      </div>
+<div class="container">
+  <div class="page">
+    <div class="menu-app">
+      <app-menu></app-menu>
     </div>
-    <div class="panel">
-      <div class="account-container">
-        <div class="panel">
-          <img src="assets/logo-financiauto.jpg" alt="Logo de la cuenta" class="logo">
-          
-          <div class="user-info">
-            <p>Nombres: {{userName}}</p>
-            <p>Apellidos: {{lastName}}</p>
-            <p>Email: {{email}}</p>
-          </div>
-          
-          <h2>Actualizar Contraseña</h2>
-          
-          <div class="password-form">
-            <label for="new-password">Nueva Contraseña:</label>
-            <input type="password" id="new-password" name="new-password">
-            
-            <label for="confirm-password">Verificar Nueva Contraseña:</label>
-            <input type="password" id="confirm-password" name="confirm-password">
-            
-            <button class="custom-button">ACTUALIZAR CONTRASEÑA</button>
-          </div>
+  </div>
+
+  <div class="panel">
+    <div class="account-container">
+      <div class="panel">
+        <img src="assets/logo-financiauto.jpg" alt="Logo de la cuenta" class="logo">
+
+        <div class="user-info">
+          <p>Nombres: {{userName}}</p>
+          <p>Apellidos: {{lastName}}</p>
+          <p>Email: {{email}}</p>
         </div>
+
+        <h2>Actualizar Contraseña</h2>
+
+        <form [formGroup]="updatePasswordForm" (ngSubmit)="updatePassword()" class="updatePasswordForm">
+          <div class="form-group">
+            <label for="new-password">Nueva Contraseña:</label>
+            <input type="password" id="new-password" formControlName="newPassword" class="form-control">
+          </div>
+
+          <div class="form-group">
+            <label for="confirm-password">Verificar Nueva Contraseña:</label>
+            <input type="password" id="confirm-password" formControlName="confirmPassword" class="form-control">
+          </div>
+
+          <button type="submit" class="custom-button" [disabled]="updatePasswordForm.invalid">ACTUALIZAR CONTRASEÑA</button>
+        </form>
       </div>
     </div>
   </div>
+</div>

@@ -56,6 +56,7 @@ export class LoginComponent implements OnInit{
         localStorage.setItem('lastName', String(user.lastName));
         localStorage.setItem('email', String(user.email));
         localStorage.setItem('password', String(user.password));
+        localStorage.setItem('dateOfBirth', String(user.dateOfBirth));
 
         const userId = localStorage.getItem('userId')
         console.log(userId);

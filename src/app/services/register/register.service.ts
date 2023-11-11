@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class RegisterService extends BaseService<UserNotRegistered>{
   uri = '/user/create';
+  uri2 = '/user/update';
 
   constructor(http: HttpClient) {
     super(http)
@@ -17,6 +18,12 @@ export class RegisterService extends BaseService<UserNotRegistered>{
 
   register(user: Object): Observable<HttpResponse<any>> {
     const path = this.basePath + this.uri
+    return this.http.post( path, user,{headers:this.httpOptions.headers, observe:'response'})
+
+  }
+
+  update(user: Object): Observable<HttpResponse<any>> {
+    const path = this.basePath + this.uri2
     return this.http.post( path, user,{headers:this.httpOptions.headers, observe:'response'})
 
   }
