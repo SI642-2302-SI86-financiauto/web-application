@@ -29,6 +29,7 @@ import {MatDatepickerModule} from "@angular/material/datepicker";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {HttpClientModule} from "@angular/common/http";
 import { FormComponent } from './security/components/form/form.component';
+import { ListScheduleComponentComponent } from './ListSchedule/list-schedule-component/list-schedule-component.component';
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import { FormComponent } from './security/components/form/form.component';
     AccountComponent,
     PageNotFoundComponent,
     TableScheduleComponent,
+    ListScheduleComponentComponent,
   ],
   imports: [
     BrowserModule,

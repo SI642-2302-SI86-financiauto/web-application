@@ -9,6 +9,19 @@
   <div class="schedule__container">
     <h1>Cronograma de Pagos </h1>
     <app-table-schedule [schedule]="mySchedule$"></app-table-schedule>
+    <div class="financial-card">
+      <h2>Resultados Financieros</h2>
+      <div class="financial-data">
+        <div>
+          <p>VAN:</p>
+          <p>{{ van | number: '1.2-2' }}</p>
+        </div>
+        <div>
+          <p>TIR:</p>
+          <p>{{ tir | number: '1.2-2' }}%</p>
+        </div>
+      </div>
   </div>
   </div>
+  
 </div>

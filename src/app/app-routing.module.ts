@@ -7,6 +7,7 @@ import {AccountComponent} from "./profile/pages/account/account.component";
 import {RegisterComponent} from "./security/pages/register/register.component";
 import {LoginComponent} from "./security/pages/login/login.component";
 import {PageNotFoundComponent} from "./public/pages/page-not-found/page-not-found.component";
+import { ListScheduleComponentComponent } from './ListSchedule/list-schedule-component/list-schedule-component.component';
 
 const routes: Routes = [
   {path: 'homepage', component: HomepageComponent},
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path: 'plans/:id', component: ScheduleComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
+  {path: 'list-schedule', component: ListScheduleComponentComponent},
   // {path: '**', component: PageNotFoundComponent},
   {path: '', redirectTo: 'login', pathMatch: 'full'}
 ];

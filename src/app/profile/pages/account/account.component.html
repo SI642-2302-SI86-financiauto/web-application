@@ -23,11 +23,17 @@
           <div class="form-group">
             <label for="new-password">Nueva Contraseña:</label>
             <input type="password" id="new-password" formControlName="newPassword" class="form-control">
+            <div *ngIf="updatePasswordForm.get('newPassword')?.hasError('required') && updatePasswordForm.get('newPassword')?.touched" style="color: red">
+              Este campo es obligatorio.
+            </div>
           </div>
 
           <div class="form-group">
             <label for="confirm-password">Verificar Nueva Contraseña:</label>
             <input type="password" id="confirm-password" formControlName="confirmPassword" class="form-control">
+            <div *ngIf="updatePasswordForm.get('confirmPassword')?.hasError('required') && updatePasswordForm.get('confirmPassword')?.touched" style="color: red">
+              Este campo es obligatorio.
+            </div>
           </div>
 
           <button type="submit" class="custom-button" [disabled]="updatePasswordForm.invalid">ACTUALIZAR CONTRASEÑA</button>

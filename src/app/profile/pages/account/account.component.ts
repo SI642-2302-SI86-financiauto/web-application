@@ -71,7 +71,7 @@ export class AccountComponent implements OnInit {
       } else {
         this.updatePasswordForm.setErrors({ passwordMismatch: true });
         console.log('La nueva contraseña y la confirmación no coinciden.');
-        alert("Usuario o contraseña incorrectos");
+        alert("Las contraseñas no coinciden");
       }
     } else {
       console.log('Por favor, completa todos los campos.');
