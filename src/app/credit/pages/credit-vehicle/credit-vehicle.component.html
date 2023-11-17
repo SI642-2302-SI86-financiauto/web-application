@@ -124,6 +124,23 @@
             Debe ingresar un valor mayor a 0.
           </div>
         </div>
+
+        
+
+      </div>
+
+      <div *ngIf="creditForm.get('rateType')?.value === 'NOMINAL'">
+        <div class="i-group">
+          <h3>Periodo de capitalización*</h3>
+          <select class="i-group" name="capitalizationPeriod" id="capitalizationPeriod" formControlName="capitalizationPeriod">
+            <option value="DAILY">Diario</option>
+            <option value="FORTNIGHTLY">Quincenal</option>
+            <option value="MONTHLY">Mensual</option>
+            <option value="QUARTERLY">Trimestral</option>
+            <option value="SEMIANNUALLY">Semestral</option>
+            <option value="ANNUALLY">Anual</option>
+          </select>
+        </div>
       </div>
 
       <!--frecuencia de pago!-->
@@ -155,9 +172,9 @@
         <div class="i-group">
           <h3>Plazo de gracia*</h3>
           <select name="grace" class="i-group" id="grace" formControlName="gracePeriod" [(ngModel)]="credit.gracePeriodType" >
-            <option value="TOTALY">TOTAL</option>
-            <option value="PARTIALLY">PARCIAL</option>
-            <option value="NONE">NINGUNO</option>
+            <option value="T">TOTAL</option>
+            <option value="P">PARCIAL</option>
+            <option value="N">NINGUNO</option>
           </select>
         </div>
 
